@@ -37,6 +37,7 @@ main {
 }
 
 .main__container {
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -45,7 +46,7 @@ main {
   width: 100vw;
   transition: all 0.3s;
   z-index: 40;
-  background-color: $color-3;
+  background-color: rgba($color-1, 0.2);
   height: 100%;
 
   &--nav-container {
@@ -84,6 +85,7 @@ main {
       margin-bottom: 2rem;
       background-color: $color-3;
       padding: 1rem 2rem;
+      border-radius: 10px;
     }
   }
 
@@ -105,7 +107,7 @@ main {
       box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.5);
 
       &:last-child {
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
       }
     }
   }
@@ -130,9 +132,10 @@ main {
 
   & > .idea {
     // margin-right: 4rem;
+    width: 18rem;
     font-size: 3rem;
     text-align: center;
-    padding: 2rem;
+    padding: 1rem 1rem;
     border: 1px solid $color-1;
     margin: 1rem;
     // border-radius: 40%;
@@ -148,6 +151,11 @@ main {
       color: #fafafa;
       transform: scale(1.05);
     }
+  }
+  & > .clicked {
+    background-color: $color-2;
+    color: #fafafa;
+    transform: scale(1.05);
   }
 }
 
@@ -216,11 +224,20 @@ main {
 }
 
 .footer {
+  margin-top: 2rem;
   width: 100%;
-  height: 30px;
+  padding: 0.5rem 0;
+  font-weight: 900;
+  font-size: 1.3rem;
+  background-color: $color-4;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 900;
-  font-size: 1.2rem;
+  z-index: 50;
+  position: fixed;
+  bottom: 0;
+
+  & > p {
+    color: #fafafa;
+  }
 }

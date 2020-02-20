@@ -1,3 +1,4 @@
+const ideas = document.querySelectorAll(".idea");
 //////////////////////////////////
 // Call API and get pictures
 //////////////////////////////////
@@ -37,7 +38,10 @@ function displayImages(data) {
 ///////////////////////////////////
 // Clear images function
 //////////////////////////////////
-function clearImages() {
+function clearImages(clicked = null) {
+  if (clicked) {
+    ideas.forEach(idea => idea.classList.remove("clicked"));
+  }
   const imageContainer = document.querySelector(".main__container--images");
   while (imageContainer.firstChild) {
     imageContainer.removeChild(imageContainer.firstChild);
@@ -68,13 +72,12 @@ document.querySelector("#calm-form").addEventListener("submit", e => {
 // Event Listeners on the buttons
 //////////////////////////////////
 
-const ideas = document.querySelectorAll(".idea");
-
 ideas.forEach(idea => {
   idea.addEventListener("click", e => {
     // Remake
-    clearImages();
+    clearImages("clicked");
     getSearch(e.target.innerHTML);
+    idea.classList.add("clicked");
   });
 });
 
