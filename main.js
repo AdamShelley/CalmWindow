@@ -81,5 +81,5 @@ ideas.forEach(idea => {
   });
 });
 
-// Secret key to access API
+// "Secret" key to access API
 const key = "757699383254d35cf4ebae4dd19eb9fda9049e52f394f409aad91358d23a9aea";
